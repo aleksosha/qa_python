@@ -24,6 +24,36 @@ class TestBooksCollector:
     # напиши свои тесты ниже
     # чтобы тесты были независимыми в каждом из них создавай отдельный экземпляр класса BooksCollector()
 
+    def test_add_new_book_duplicate(self):
+        collector = BooksCollector()
+
+        collector.add_new_book('1984')
+        collector.add_new_book('1984')
+
+        assert len(collector.get_books_genre()) == 1
+
+    def test_add_new_book_add_book_name_less_than_41(self):
+        collector = BooksCollector()
+
+        collector.add_new_book('Волшебная гора')
+
+        assert len(collector.get_books_genre()) == 1
+
+
+    def test_add_new_book_add_book_name_more_than_41(self):
+        collector = BooksCollector()
+
+        collector.add_new_book('Необыкновенные приключения Робинзона Крузо')
+
+        assert collector.get_books_genre() == {}
+
+
+    def test_add_new_book_add_book_empty_name(self):
+        collector = BooksCollector()
+
+        collector.add_new_book('')
+
+        assert collector.get_books_genre() == {}
 
     def test_set_book_genre_add_book_with_valid_genre(self):
         collector = BooksCollector()
