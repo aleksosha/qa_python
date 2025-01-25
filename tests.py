@@ -28,11 +28,12 @@ class TestBooksCollector:
         collector = BooksCollector()
 
         collector.add_new_book('1984')
+        collector.add_new_book('Волшебная гора')
         collector.add_new_book('1984')
 
-        assert len(collector.get_books_genre()) == 1
+        assert len(collector.get_books_genre()) == 2
 
-    def test_add_new_book_add_book_name_less_than_41(self):
+    def test_add_new_book_add_book_name_less_than_41_symbols(self):
         collector = BooksCollector()
 
         collector.add_new_book('Волшебная гора')
@@ -40,7 +41,7 @@ class TestBooksCollector:
         assert len(collector.get_books_genre()) == 1
 
 
-    def test_add_new_book_add_book_name_more_than_41(self):
+    def test_add_new_book_add_book_name_more_than_41_symbols(self):
         collector = BooksCollector()
 
         collector.add_new_book('Необыкновенные приключения Робинзона Крузо')
