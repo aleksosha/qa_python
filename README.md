@@ -21,3 +21,13 @@
 Проверяет удаление книг из списка favorites
 10. test_get_list_of_favorites_books
 Проверяет получение книг из списка favorites
+
+Добавленные тесты после замечаний:
+1. test_add_new_book_duplicate
+Проверяет добавление дублирующихся книг 
+2. test_add_new_book_add_book_name_less_than_41_symbols
+Проверяет добавление книги с названием меньше 41 символов
+3. test_add_new_book_add_book_name_more_than_41_symbols
+Проверяет добавление книги с названием больше 41 символом
+4. test_add_new_book_add_book_empty_name
+Проверяет добавление книги без названия
